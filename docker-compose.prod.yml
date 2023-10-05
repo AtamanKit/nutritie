@@ -1,0 +1,59 @@
+version: '3.3'
+
+services:
+  web:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    volumes:
+      - react_build:/home/frontend/
+  
+  api:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    command: gunicorn nut_proj.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/home/backend/static/
+      - ./backend/media/:/home/backend/media/
+    # ports:
+    #   - 8000:8000
+    expose:
+      - 8000
+    env_file:
+      - ./backend/.env.prod.api
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env.prod.db
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - react_build:/home/frontend/
+      - static_volume:/home/backend/static/
+      - ./backend/media/:/home/backend/media/
+      - ./certbot/www/:/var/www/certbot/
+      - ./certbot/conf/:/etc/nginx/ssl/
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - web
+      - api
+
+        #  certbot:
+        #    image: certbot/certbot:latest
+        #    volumes:
+        #      - ./certbot/www/:/var/www/certbot/
+        #      - ./certbot/conf/:/etc/letsencrypt/
+
+volumes:
+  postgres_data:
+  react_build:
+  static_volume:

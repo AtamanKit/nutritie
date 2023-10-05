@@ -1,0 +1,49 @@
+# Stage 1: Build stage
+FROM python:3.10-alpine3.15 as builder
+
+WORKDIR /usr/src/app
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN apk update
+RUN apk add zlib-dev jpeg-dev gcc musl-dev libffi-dev
+
+RUN pip install --upgrade pip
+
+# flake8 error checking
+RUN pip install flake8
+COPY . .
+RUN flake8 --ignore=E501,F401 .
+
+COPY ./requirements.txt .
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
+
+# Stage 2: Production
+FROM python:3.10-alpine3.15
+
+RUN mkdir -p /home/backend
+ENV HOME=/home/backend
+
+WORKDIR $HOME
+
+RUN apk update
+RUN apk add zlib-dev jpeg-dev gcc musl-dev libffi-dev
+
+COPY --from=builder /usr/src/app/wheels /wheels
+COPY --from=builder /usr/src/app/requirements.txt .
+RUN pip install --no-cache /wheels/*
+
+COPY . .
+
+RUN chmod +x $HOME/entrypoint.sh
+
+RUN mkdir $HOME/static
+
+RUN addgroup backend && adduser -S -G backend backend
+RUN chown -R backend:backend $HOME
+USER backend
+
+ENTRYPOINT ["/home/backend/entrypoint.sh"]
+
+
