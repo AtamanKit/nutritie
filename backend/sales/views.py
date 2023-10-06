@@ -46,7 +46,7 @@ def order_email(request):
                 'total_price': request.data['total_price'],
             }
 
-            subject = 'Comanda receptionata VINDECARE.ORG'
+            subject = 'Comanda receptionata PLAFAR.ORG'
 
             template = get_template('email/order.html')
             content = template.render(context)

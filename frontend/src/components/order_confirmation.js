@@ -71,7 +71,7 @@ export default function OrderConfirmation(props) {
                 Adresa livrarii
             </h3>
             <p style={{margin: '0 0 0 0'}}>
-                Inainte de livrare ve-ti fi contactat de catre un reprezentat de-al nostru pentru a confirma livrarea.
+                Inainte de livrare va vom contacta pentru confirmare.
             </p>
             <p style={{margin: '0 0 2% 0'}}>
                 In caz ca ati prezentat un email valid, veti primi o versiune email a acestei pagini. 
@@ -108,7 +108,7 @@ export default function OrderConfirmation(props) {
             </table>
             <p style={{margin: '5% 0 0 0'}}>Va multumit ca ati ales site-l nostru!</p>
             <p>
-                Echipa: <a style={{color: 'blue', textDecoration: 'underline'}} href='https://vindecare.org'>VINDECARE.ORG</a>, adresa email: <a href='#' style={{color: 'blue'}}>vindecareorg@gmail.com</a>
+                Echipa: <a style={{color: 'blue', textDecoration: 'underline'}} href='https://plafar.org'>PLAFAR.ORG</a>, adresa email: <a href='#' style={{color: 'blue'}}>plafarorg@gmail.com</a>
             </p>
         </div>
     )

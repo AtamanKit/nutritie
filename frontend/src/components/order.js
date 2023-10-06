@@ -353,7 +353,7 @@ export default function Order() {
                             
                             
                             <Form.Control.Feedback type='invalid'>
-                                Introduceti regiunee
+                                Introduceti regiunea
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
@@ -387,7 +387,7 @@ export default function Order() {
                         />
                         <p>
                             In urma inregistrarii datelor dumneavaostra
-                            un reprezentat din partea noastra va va contacta
+                            va vom contacta
                             pentru a stabili modalitatea de plata si trimitere a produsului.
                             <br />
                             Garantam discretia si nedistribuirea datelor cu caracter personal.
