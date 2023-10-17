@@ -38,7 +38,8 @@ export function refreshTokenSetup(res) {
 export function apiUrl() {
     let url = ''
     if (process.env.NODE_ENV === 'production') {
-        url = window.location.origin + '/api';
+//        url = window.location.origin + '/api';
+	url = 'http://plafar.org'
     } else {
         url = 'http://localhost:8000/api';
     };
