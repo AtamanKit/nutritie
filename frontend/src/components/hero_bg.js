@@ -22,7 +22,7 @@ function HeroBg(props) {
                                         textAlign: 'center',
                                         color: '#fff',
                                     }}>
-                                    <h1 style={{fontWeight: 'bold', fontSize: '4rem'}}>VEDETI MAGAZINUL NOSTRU</h1>
+                                    <h1 className='heroTitle'>VEDETI MAGAZINUL NOSTRU</h1>
                         </Card.Title>
                 </Card>
                 <div className='text-center'>

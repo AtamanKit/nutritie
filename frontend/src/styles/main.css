@@ -1,6 +1,6 @@
 a {
     text-decoration-line: none;
-    color:rgb(0, 0, 0)
+    color: rgb(0, 0, 0)
 }
 
 a:hover {
@@ -30,7 +30,7 @@ a:hover {
     position: relative;
 }
 
-@media only screen and (max-width: 592px){
+@media only screen and (max-width: 592px) {
     .hero-text h1 {
         font-size: 1rem;
     }
@@ -43,24 +43,25 @@ a:hover {
 @media only screen and (min-width: 992px) {
     .navbar {
         font-size: 1rem;
-        color:rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
     }
 }
 
 @media only screen and (max-width: 992px) {
     .nav-toggle {
-        background-color:#003c46;
+        background-color: #003c46;
         padding-left: 20px;
     }
 }
 
 @media only screen and (min-width: 992px) {
     .vertical-line {
-        background-color:rgba(200, 200, 200, 0.8);
+        background-color: rgba(200, 200, 200, 0.8);
         width: 0.1rem;
         height: 1.5rem;
         margin-top: 1.6rem;
     }
+
     .nav_left {
         /* border-right: 2px solid rgb(200, 200, 200); */
         margin-top: 1rem;
@@ -80,6 +81,7 @@ a:hover {
     .nav_left {
         padding-bottom: 0
     }
+
     .nav_left_sign {
         padding-top: 0;
     }
@@ -117,7 +119,7 @@ a:hover {
     color: rgb(215, 215, 215);
     padding-top: 80px;
     padding-bottom: 80px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
 }
 
@@ -127,7 +129,7 @@ a:hover {
     position: relative;
     padding-bottom: 20px;
     color: #fff;
-  }
+}
 
 .footer-title h3:after {
     position: absolute;
@@ -140,7 +142,7 @@ a:hover {
 }
 
 .footer-title ul {
-    list-style:circle;
+    list-style: circle;
 }
 
 .footer-title a {
@@ -165,7 +167,7 @@ a:hover {
 }
 
 .whats-btn:hover {
-    color:seagreen;
+    color: seagreen;
 }
 
 .cardbody {
@@ -198,25 +200,37 @@ h2.categorii {
     background-color: #94b237;
     border: #94b237;
     position: relative;
-    color:white; 
+    color: white;
     /* width: 50%; */
 }
 
-@media only screen and (max-width: 576px) { 
-    .myBtnHero { 
-        display: block;
-        width: 94%;
-        margin-left: 1%;
-
-    }
+.heroTitle {
+    font-weight: bold;
+    font-size: 4rem;
 }
 
+@media only screen and (max-width: 576px) {
+    .myBtnHero {
+        /* display: block; */
+        width: 94%;
+        align-content: center;
+        text-align: center;
+        /* margin-left: 1%; */
+
+    }
+
+    ;
+
+    .heroTitle {
+        font-size: 2rem;
+    }
+}
 
 .myBtn {
     background-color: #94b237;
     border: #94b237;
     position: relative;
-    color:white;
+    color: white;
     /* width: 50%; */
 }
 
@@ -244,7 +258,6 @@ h2.categorii {
         display: block;
         width: 100%;
         margin: 0 0 0.5rem 0
-
     }
 
     .myBtnBord {
@@ -258,7 +271,7 @@ h2.categorii {
     background-color: #94b237;
     border: #94b237;
     position: relative;
-    color:white;
+    color: white;
     margin-left: 0.3rem;
     /* width: 50%; */
 }
@@ -274,7 +287,7 @@ h2.categorii {
 }
 
 .footer-home-link:hover {
-    color:#106b1f;
+    color: #106b1f;
 }
 
 .cardGroup-product {
@@ -334,7 +347,7 @@ h2.categorii {
 }
 
 .btn-search {
-    color:rgb(200, 200, 200);
+    color: rgb(200, 200, 200);
     border-color: #94b237;
 }
 
@@ -353,7 +366,8 @@ h2.categorii {
     color: rgb(0, 0, 0);
     font-weight: bold;
     border: 0;
-    z-index: 1;;
+    z-index: 1;
+    ;
 }
 
 .cart-counter-text {
@@ -382,7 +396,6 @@ h2.categorii {
         width: 100%;
         height: 100%;
         margin: 0 0 0.5rem 0
-
     }
 }
 
@@ -488,7 +501,7 @@ h2.categorii {
 
 .cross-cart {
     width: 3rem;
-    cursor:grab;
+    cursor: grab;
 }
 
 .modal_btn {
@@ -524,7 +537,7 @@ h2.categorii {
 
 @media only screen and (max-width: 992px) {
     .after-login {
-        margin : 0 0 0 0;
+        margin: 0 0 0 0;
     }
 }
 
@@ -535,7 +548,7 @@ h2.categorii {
 
 @media only screen and (max-width: 992px) {
     .after-login-img {
-        margin: 0 .5rem .5rem 0       
+        margin: 0 .5rem .5rem 0
     }
 }
 
@@ -623,7 +636,9 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-td, th {
+
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -634,4 +649,3 @@ td, th {
     height: 100vh;
     padding-top: 10%;
 }
-
