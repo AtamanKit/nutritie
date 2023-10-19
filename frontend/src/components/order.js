@@ -7,6 +7,7 @@ import { decrementAll } from '../features/cart/counterSlice';
 import { emptyCart } from '../features/cart/cartSlice';
 
 import OrderDesktop from './order_desktop';
+import OrderMobile from './order_mobile';
 import OrderConfirmation from './order_confirmation';
 
 import { apiUrl } from './utils';
@@ -162,6 +163,8 @@ export default function Order() {
         'resize', modifWindow
     )
 
+    console.log(width)
+
     if (
         order.includes('id') &&
         order.includes('command_id') &&
@@ -198,17 +201,45 @@ export default function Order() {
                     textAlign: 'center',
                     margin: '4% 0 0 0'
                 }}>
-                    <h3>INTRODUCETI DATELE CU PRIVIRE LA ADRESA SI NUMELE DVS.</h3>
+                    {   
+                        width > 992 ?
+                            <h3>INTRODUCETI DATELE CU PRIVIRE LA ADRESA SI NUMELE DVS.</h3> :
+                            <h5>INTRODUCETI DATELE CU PRIVIRE LA ADRESA SI NUMELE DVS.</h5>
+                    }
                 </div>
                 <Form
-                    style={{
-                        margin: '1% 20% 4% 20%'
-                    }}
+                    style={
+                        width > 992 ?
+                            {margin: '1% 20% 4% 20%'} :
+                            {margin: '1% 10% 4% 10%'}
+                    
+                    }
                     noValidate
                     validated={validated}
                     onSubmit={handleSubmit}
                 >
-                    <OrderDesktop />
+                    {
+                        width > 992
+                            ?   <OrderDesktop
+                                    sFirstName={arg=>setFirstName(arg)}
+                                    sLastName={arg=>setLastName(arg)}
+                                    sTelephone={arg=>setTelephone(arg)}
+                                    sEmail={arg=>setEmail(arg)}
+                                    sCountry={arg=>setCountry(arg)}
+                                    sCity={arg=>setCity(arg)}
+                                    sAddress={arg=>setAddress(arg)}
+                                />
+                            // :   <h1>Proba</h1>
+                            :   <OrderMobile
+                                    sFirstName={arg=>setFirstName(arg)}
+                                    sLastName={arg=>setLastName(arg)}
+                                    sTelephone={arg=>setTelephone(arg)}
+                                    sEmail={arg=>setEmail(arg)}
+                                    sCountry={arg=>setCountry(arg)}
+                                    sCity={arg=>setCity(arg)}
+                                    sAddress={arg=>setAddress(arg)}
+                                />
+                    }
 
                     <Form.Group className='mb-3'>
                         <Form.Check 

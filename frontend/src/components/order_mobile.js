@@ -1,29 +1,31 @@
 import { Form, Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
 
-export default function OrderDesktop(props) {
+export default function OrderMobile(props) {
     const [country, setCountry] = useState('Republica Moldova');
 
-    return(
+    return (
         <>
             <Row className='mb-3'>
                 <Form.Group as={Col}>
                     <Form.Label>Prenume</Form.Label>
                     <Form.Control
                         required
-                        placeholder='Introduceti prenume' 
+                        placeholder='Introduceti prenume'
                         onChange={e => props.sFirstName(e.target.value)}
                     />
                     <Form.Control.Feedback type='invalid'>
                         Introduceti prenume
                     </Form.Control.Feedback>
                 </Form.Group>
+            </Row>
+            <Row className='mb-3'>
                 <Form.Group as={Col}>
                     <Form.Label>Nume</Form.Label>
                     <Form.Control
                         required
                         placeholder='Introduceti nume'
-                        onChange={e => props.sLastName(e.target.value)}
+                        onChange={e => props.sLastName(e.targe.value)}
                     />
                     <Form.Control.Feedback type='invalid'>
                         Introduceti nume
@@ -41,40 +43,39 @@ export default function OrderDesktop(props) {
                     <Form.Control.Feedback type='invalid'>
                         Introduceti numar de telefon
                     </Form.Control.Feedback>
-                </Form.Group>
+                </Form.Group>    
+            </Row>
+            <Row className='mb-3'>
                 <Form.Group as={Col}>
                     <Form.Label>Email</Form.Label>
-                    <Form.Control 
-                        // required
-                        type='email'
-                        placeholder='Introduceci email'
-                        onChange={e => props.sEmail(e.target.value)}
+                    <Form.Control
+                        placeholder='Introduceti email'
+                        onChange={e => props.sEmail(e.targe.value)}
                     />
-                    {/* <Form.Control.Feedback type='invalid'>
-                        Introduceti un email valid
-                    </Form.Control.Feedback> */}
                 </Form.Group>
             </Row>
             <Row className='mb-3'>
                 <Form.Group as={Col}>
                     <Form.Label>Tara</Form.Label>
-                    <Form.Select 
+                    <Form.Select
                         required
                         defaultValue='Alegeti...'
                         onChange={
                             e => {
-                                    props.sCountry(e.target.value);
-                                    setCountry(e.target.value)
-                                }
+                                props.sCountry(e.target.value);
+                                setCountry(e.target.value)
+                            }
                         }
                     >
-                        <option value='Republica Moldova'>Republica Moldova</option>
+                        <option value='Republica Moldova'>Republicat Moldova</option>
                         <option value='Romania'>Romania</option>
                     </Form.Select>
                     <Form.Control.Feedback type='invalid'>
                         Introduceti tara
                     </Form.Control.Feedback>
                 </Form.Group>
+            </Row>
+            <Row className='mb-3'>
                 <Form.Group as={Col}>
                     <Form.Label>Raion/Judet</Form.Label>
                     {
@@ -183,9 +184,11 @@ export default function OrderDesktop(props) {
                         Introduceti localitatea
                     </Form.Control.Feedback>
                 </Form.Group>
+            </Row>
+            <Row className='mb-3'>
                 <Form.Group as={Col}>
                     <Form.Label>Adresa</Form.Label>
-                    <Form.Control 
+                    <Form.Control
                         placeholder='str., nr. bloc/nr. apartament'
                         onChange={e => props.sAddress(e.target.value)}
                     />
