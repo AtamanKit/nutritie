@@ -34,6 +34,27 @@ function Products(props) {
 
     const [show, setShow] = useState(false);
 
+    const [width, setWidth] = useState(window.innerWidth);
+
+    const checkWidth = () => {
+        setWidth(window.innerWidth)
+    }
+
+    window.addEventListener(
+        'resize', checkWidth
+    )
+
+    const styles = {
+        container: {
+            display: 'flex',
+            justifyContent: 'center',
+            paddingBottom: '2rem'
+        },
+        responceDiv: {
+            width: width > 1600 ? '80%': '100%'
+        }
+    }
+    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -83,17 +104,20 @@ function Products(props) {
                                     </Tooltip>
                                 }
                             >
-                            <Card.Title>
-                                <a 
-                                    href={hrefpath}
-                                    style={{
-                                        color: 'rgb(30, 30, 30)',
-                                        textDecorationLine: 'none',
-                                    }}
-                                >
-                                        {CountText(product.title, 25)}
-                                </a>
-                            </Card.Title>
+                            <div style={{height: '5rem'}}>
+                                <Card.Title>
+                                    <a 
+                                        href={hrefpath}
+                                        style={{
+                                            color: 'rgb(30, 30, 30)',
+                                            textDecorationLine: 'none',
+                                        }}
+                                    >
+                                        {CountText(product.title, 50)}
+                                        {/* {product.title} */}
+                                    </a>
+                                </Card.Title>
+                            </div>
                             </OverlayTrigger>
                             <Card.Text style={{color: 'rgb(0, 130, 255)', fontSize: '15px'}}>ID PRODUS: {product.id}</Card.Text>
                             <Card.Text style={{color: 'rgb(200, 41, 41)'}}>{product.stock}</Card.Text>
@@ -155,14 +179,18 @@ function Products(props) {
                     </div>
                 :   []
             }
-            <Row xs={1} md={5}>
-                {
-                    products.map(product => 
-                        prodReturn(product)
-                    )
-                }
-                
-            </Row>
+            <div style={styles.container}>
+                <div style={styles.responceDiv}>
+                    <Row xs={1} md={5}>
+                        {
+                            products.map(product => 
+                                prodReturn(product)
+                            )
+                        }
+                        
+                    </Row>
+                </div>
+            </div>
             <Offcanvas 
                 show={show} 
                 onHide={handleClose}

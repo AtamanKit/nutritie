@@ -52,7 +52,7 @@ function App() {
   const cartApRef = useRef(null);
   const footApRef = useRef(null);
 
-  // Scroll functions. The document will scroll
+// Scroll functions. The document will scroll
   // Depending on what menus is pushed
   // Then changing the title
   const homeApFunc = () => {

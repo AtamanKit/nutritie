@@ -35,39 +35,45 @@ function Articles(props){
 
     function titleLong() {
         if (width <= 1200 && width >= 992) {
-            return 20
-        } else if (width <= 992 && width >= 768) {
             return 15
+        } else if (width <= 992 && width >= 768) {
+            return 10
         // } else if (width <= 768 && width >= 576) {
         //     return 30
         } else if (width <= 576) {
-            return 24
+            return 20
         } else {
-            return 24
+            return 20
         }
         
     }
 
     function textLong() {
         if (width <= 1200 && width >= 992) {
-            return 150
+            return 30
         } else if (width <= 992 && width >= 768) {
-            return 75
-        // } else if (width <= 768 && width >= 576) {
-        //     return 30
-        // } else if (width <= 576) {
-        //     return 75
+            return 15
         } else {
-            return 300
+            return 80
         }
-        
+        // return 100
+    }
+
+    const styles = {
+        container: {
+            display: 'flex',
+            justifyContent: 'center'
+        },
+        responceDiv: {
+            width: width > 1600 ? '80%': '100%'
+        }
     }
 
     function finalReturn(article) {
         const hrefpath = `/breadcrumb/ARTICOL/${article.category.title}/${article.id}`
         return (
             <React.Fragment>
-                <Col key={article.id} style={{paddingTop: '2rem'}}>
+                <Col key={article.id} style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
                     <Card style={{
                                     // textAlign: 'center',
                                     border: 'none',
@@ -98,17 +104,22 @@ function Articles(props){
                                         </Tooltip>
                                     }
                                 >
-                                <Card.Title>
-                                    
-                                            {CountText(article.title, titleLong())}
-                                    
-                                </Card.Title>
+                                <div style={{height:'4em'}}>
+                                    <Card.Title>
+                                        
+                                        {/* {CountText(article.title, titleLong())} */}
+                                        {article.title}
+                                        
+                                    </Card.Title>
+                                    </div>
                                 </OverlayTrigger>
-                                <Card.Text>
-                                    {
-                                        CountText(article.text, textLong())
-                                    }
-                                </Card.Text>
+                                <div style={{height: '5em'}}>
+                                    <Card.Text>
+                                        {
+                                            CountText(article.text, textLong())
+                                        }
+                                    </Card.Text>
+                                </div>
                                 
                                 <Button 
                                     variant='success' 
@@ -141,13 +152,17 @@ function Articles(props){
 
     return (
         <React.Fragment>
-            <Row xs={1} md={4}>
-                {
-                    articles.map(article =>
-                        articleReturn(article)
-                    )
-                }
-            </Row>
+            <div style={styles.container}>
+                <div style={styles.responceDiv}>
+                    <Row xs={1} md={4}>
+                        {
+                            articles.map(article =>
+                                articleReturn(article)
+                            )
+                        }
+                    </Row>
+                </div>
+            </div>
         </React.Fragment>
     )
 }

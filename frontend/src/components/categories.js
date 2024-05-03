@@ -4,6 +4,25 @@ import React, { useEffect, useState } from 'react';
 
 function Categories(props){
     const [categories, setCategories] = useState([]);
+    const [width, setWidth] = useState(window.innerWidth);
+
+    const checkWidth = () => {
+        setWidth(window.innerWidth)
+    }
+
+    window.addEventListener(
+        'resize', checkWidth
+    )
+
+    const styles = {
+        container: {
+            display: 'flex',
+            justifyContent: 'center'
+        },
+        responsiveDiv: {
+            width: width > 1600 ? '80%' : '100%',
+        }
+    }
 
     useEffect(() => {
         const url = props.url
@@ -42,35 +61,38 @@ function Categories(props){
                     </Card.Text>
                 </Card.Body>
             </Card> */}
-            <CardGroup>
-                {
-                    categories.map((category) => {
-                        const hrefpath = `/breadcrumb/${props.type}/${category.title}/`
-                        return (
-                            <React.Fragment>
-                                <Card key={category.id} className='cardbody'>
-                                {/* <div className='cat-img'> */}
-                                    <a href={hrefpath}>
-                                        <Card.Img 
-                                                variant='top' 
-                                                src={category.image_desc}
-                                                className='cat-img'
-                                        />
-                                    </a>
-                                    <Card.Body>
-                                        <Card.Title>{category.title}</Card.Title>
-                                        <Card.Text>{category.description}</Card.Text>
-                                        <Button href={hrefpath} variant='success' className='myBtn'>
-                                            Accesati...
-                                        </Button>
-                                    </Card.Body>
-                                {/* </div> */}
-                                </Card>
-                        </React.Fragment>
-                        )
-                    })
-                }
-            </CardGroup>
+            <div style={styles.container}>
+                <div style={styles.responsiveDiv}>
+                    <CardGroup>
+                        {
+                            categories.map((category) => {
+                                const hrefpath = `/breadcrumb/${props.type}/${category.title}/`
+                                return (
+                                    <React.Fragment>
+                                        <Card key={category.id} className='cardbody'>
+                                        {/* <div className='cat-img'> */}
+                                            <a href={hrefpath}>
+                                                <Card.Img 
+                                                        variant='top' 
+                                                        src={category.image_desc}
+                                                        className='cat-img'
+                                                />
+                                            </a>
+                                            <Card.Body>
+                                                <Card.Title style={{paddingBottom: '1em'}}>{category.title}</Card.Title>
+                                                {/* <Card.Text>{category.description}</Card.Text> */}
+                                                <Button href={hrefpath} variant='success' className='myBtn'>
+                                                    Accesati...
+                                                </Button>
+                                            </Card.Body>
+                                        </Card>
+                                </React.Fragment>
+                                )
+                            })
+                        }
+                    </CardGroup>
+                 </div>
+            </div>
         </React.Fragment>
     )
 }
