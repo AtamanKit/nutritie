@@ -6,7 +6,6 @@ class ProductsAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'category', 'brand')
     readonly_fields = ('id',)
 
-
 class RemediesAdmin(admin.ModelAdmin):
     list_display = ('title', 'category')
 
