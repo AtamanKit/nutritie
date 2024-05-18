@@ -682,3 +682,60 @@ td, th {
         font-size: 1rem;
     }
 }
+
+.carousel-text {
+    color: #94b237;
+    margin: 2rem 0 2rem 0;
+}
+
+@media only screen and (max-width: 576px) {
+    .carousel-text {
+        font-size: 0.8rem;
+        margin: 0 0 0 0;
+    }
+}
+
+
+.carousel-btn {
+    background-color: #94b237;
+    border: #94b237;
+    position: relative;
+    color:white;
+    /* width: 50%; */
+}
+
+.carousel-btn:hover {
+    background-color: #106b1f;
+    color: white;
+    /* display: block; */
+}
+
+.carousel-btn-board {
+    background-color: #94b237;
+    border: #94b237;
+    color: white;
+    margin-left: 0.5rem;
+    /* display: block; */
+}
+
+.carousel-btn-board:hover {
+    background-color: #106b1f;
+    color: white;
+}
+
+@media only screen and (max-width: 1400px) {
+    .carousel-btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0 0.5rem 0;
+        font-size: 0.8rem;
+
+    }
+
+    .carousel-btn-board {
+        display: block;
+        width: 100%;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+}

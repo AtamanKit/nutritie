@@ -35,7 +35,7 @@ function Remedies(props){
 
     function titleLong() {
         if (width <= 576) {
-            return 35
+            return 25
         }
         
     }
@@ -88,12 +88,13 @@ function Remedies(props){
                                             // remedy.article.title
                                         }
                                     </h3>
-                                    <p style={{
+                                    {/* <p style={{
                                         color: '#94b237',
                                         paddingTop: '1rem',
                                         paddingBottom: '2rem',
                                         }}
-                                    >
+                                    > */}
+                                    <p className='carousel-text'>
                                         {   
                                             CountText(remedy.article.text, textLong())
                                         }
@@ -102,16 +103,16 @@ function Remedies(props){
                                     <Button 
                                         href={`/breadcrumb/TOATE%20ARTICOLELE/`}
                                         variant='succes' 
-                                        className='myBtn'
+                                        className='carousel-btn'
                                     >
                                         Toate artic...
                                     </Button>
                                     <Button 
                                         href={`/breadcrumb/ARTICOL/${remedy.article.category.title}/${remedy.article.id}`}
                                         variant='succes' 
-                                        className='myBtnBord'
+                                        className='carousel-btn-board'
                                     >
-                                        Mai mult...
+                                         Mai mult...
                                     </Button>
                                 </div>
                             </div>
