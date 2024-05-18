@@ -7,18 +7,6 @@ a:hover {
     color: #94b237
 }
 
-.hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg-6.jpg');
-    height: 100vh;
-    width: 100vw;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-
 .bread-prod-image {
     background-image: linear-gradient(rgb(0, 0, 0), rgb(34, 120, 146)), url('../images/breadcrumb-supl.jpg');
     height: 40vh;
@@ -30,11 +18,76 @@ a:hover {
     position: relative;
 }
 
-@media only screen and (max-width: 592px){
-    .hero-text h1 {
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg-6.jpg');
+    height: 100vh;
+    width: 100vw;
+
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: center; */
+}
+
+.hero-text-sec h1 {
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    color: #94b237;
+    padding: 0 1rem 0 1rem;
+
+}
+
+@media only screen and (max-width: 576px){
+    .hero-text-sec h1 {
         font-size: 1rem;
     }
 }
+
+.hero-text h1 {
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 0 1rem 1rem 1rem;
+}
+@media only screen and (max-width: 592px){
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
+
+.myBtnHero {
+    background-color: #94b237;
+    border: #94b237;
+    position: relative;
+    color:white; 
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* width: 50%; */
+}
+
+@media only screen and (max-width: 576px) { 
+    .myBtnHero { 
+        display: flex;
+        width: 70%;
+        justify-content: center;
+        /* align-content: center; */
+        /* justify-content: center; */
+        /* margin-left: 1%; */
+
+    }
+}
+
 
 .navbar {
     height: 100px;
@@ -194,24 +247,6 @@ h2.produsele {
 h2.categorii {
     display: inline;
 }
-
-.myBtnHero {
-    background-color: #94b237;
-    border: #94b237;
-    position: relative;
-    color:white; 
-    /* width: 50%; */
-}
-
-@media only screen and (max-width: 576px) { 
-    .myBtnHero { 
-        display: block;
-        width: 94%;
-        margin-left: 1%;
-
-    }
-}
-
 
 .myBtn {
     background-color: #94b237;
@@ -634,4 +669,16 @@ td, th {
     text-align: center;
     height: 100vh;
     padding-top: 10%;
+}
+
+/* ============ Carousel styles ============= */
+
+.carousel-title {
+    color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+    .carousel-title {
+        font-size: 1rem;
+    }
 }

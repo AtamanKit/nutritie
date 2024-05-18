@@ -5,7 +5,7 @@ function HeroBg(props) {
         <React.Fragment>
             <div className='hero-image' ref={props.homeRef}>
            
-                <Card style={{
+                {/* <Card style={{
                         backgroundColor: 'rgba(0, 0, 0, 0.0)',
                         border: 'none',
                         }}
@@ -24,16 +24,20 @@ function HeroBg(props) {
                                     }}>
                                     <h1 style={{fontWeight: 'bold', fontSize: '4rem'}}>VEDETI MAGAZINUL NOSTRU</h1>
                         </Card.Title>
-                </Card>
-                <div className='text-center'>
-                    <Button 
-                        variant='success' 
-                        className='myBtnHero'
-                        href='/breadcrumb/PRODUSE/TOATE PRODUSELE/'
-                    >
-                        Spre produse...
-                    </Button>
+                </Card> */}
+                <div className='hero-text-sec'>
+                    <h1>VINDECARE PRIN ALIMENTATIE</h1>
                 </div>
+                <div className='hero-text'>
+                    <h1>VEDETI MAGAZINUL NOSTRU</h1>
+                </div>
+                <Button 
+                    variant='success' 
+                    className='myBtnHero'
+                    href='/breadcrumb/PRODUSE/TOATE PRODUSELE/'
+                >
+                    Spre produse...
+                </Button>
             </div>
         </React.Fragment>
             

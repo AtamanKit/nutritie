@@ -82,9 +82,10 @@ function Remedies(props){
                                         width: '40%',
                                         paddingTop: '5rem',
                                         }}>
-                                    <h3 style={{color: '#fff'}}>
+                                    <h3 className='carousel-title'>
                                         {
                                             CountText(remedy.article.title, titleLong())
+                                            // remedy.article.title
                                         }
                                     </h3>
                                     <p style={{
