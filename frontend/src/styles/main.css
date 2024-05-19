@@ -448,6 +448,7 @@ h2.categorii {
     /* margin-left: 17%; */
     border-left: none;
     border-right: none;
+    margin-bottom: 2rem;
     /* border: none; */
 }
 
@@ -493,7 +494,7 @@ h2.categorii {
 .cart-col-2 {
     width: 20%;
     display: flex;
-    padding: 2rem 0 0 0
+    padding: 0 0 2rem 0
 }
 
 @media only screen and (max-width: 1440px) {
