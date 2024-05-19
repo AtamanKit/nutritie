@@ -47,7 +47,8 @@ export default function Cart() {
         return (
             <React.Fragment>
                 <Row xs={1} md={2} className='row-cart'>
-                    <Col style={{width: '70%'}}>
+                    <div className='cart-col-1'>
+                    <Col>
                         {
                             inCart.map((product) => {
                                 total += product.price * getNum(product.id);
@@ -138,7 +139,9 @@ export default function Cart() {
                             )
                         }
                     </Col>
-                    <Col className='total-cos'>
+                    </div>
+                    <div className='cart-col-2'>
+                    <Col>
                         <Card>
                             <Card.Body>
                                 <Card.Title>
@@ -181,6 +184,7 @@ export default function Cart() {
                             </Card.Body>
                         </Card>
                     </Col>
+                    </div>
                 </Row>
             </React.Fragment>
         )

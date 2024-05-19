@@ -61,7 +61,7 @@ function ProductDetail(props) {
                         <Image src={product.image_desc} />
                     </div> */}
                 </Col>
-                <Col style={{paddingLeft: '3rem'}}>
+                <Col style={{padding: '0 2rem 0 2rem'}}>
                     <h1 style={{
                             paddingTop: '8rem',
                             paddingBottom: '2rem',
@@ -129,7 +129,7 @@ function ProductDetail(props) {
                             {/* {product.ingredients} */}
                         </Tab>
                     </Tabs>
-                    <div style={{paddingBottom: '2rem'}}>
+                    <div style={{padding: '0 1rem 2rem 1rem'}}>
                         <Button 
                             variant='success'
                             className='myBtn'

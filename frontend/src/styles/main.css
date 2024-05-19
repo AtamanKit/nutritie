@@ -416,8 +416,8 @@ h2.categorii {
     .myBtnExcl {
         display: block;
         width: 100%;
-        height: 100%;
-        margin: 0 0 0.5rem 0
+        /* height: 100%; */
+        margin: 1rem 0 1rem 0
 
     }
 }
@@ -459,8 +459,10 @@ h2.categorii {
 } */
 
 .row-cart {
-    width: 90%;
-    padding-left: 12%;
+    /* width: 100%; */
+    /* width: 100vw; */
+    display: flex;
+    justify-content: center;
 }
 
 .cart-img-title {
@@ -468,14 +470,36 @@ h2.categorii {
     width: 60%;
 }
 
-.cart-btns {
-    display: flex;
-    width: 10%;
-}
 
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
     .cart-btns {
         margin-top: 7rem;
+    }
+} */
+
+.cart-col-1 {
+    width: 60%;
+    display: flex;
+    padding: 2rem 0 0 0
+}
+
+@media only screen and (max-width: 1440px) {
+    .cart-col-1 {
+        width: 80%;
+        display: flex;
+    }
+}
+
+.cart-col-2 {
+    width: 20%;
+    display: flex;
+    padding: 2rem 0 0 0
+}
+
+@media only screen and (max-width: 1440px) {
+    .cart-col-2 {
+        width: 80%;
+        display: flex;
     }
 }
 
@@ -641,16 +665,6 @@ h2.categorii {
 @media only screen and (max-width: 768px) {
     .form-password-reset {
         margin: 0 20% 8% 20%;
-    }
-}
-
-.total-cos {
-    width: 25rem;
-}
-
-@media only screen and (max-width: 1440px) {
-    .total-cos {
-        width: 80%;
     }
 }
 
