@@ -41,13 +41,13 @@
     >
         ID comanda: {{ command_id }}
     </h3>
-    <p>Ati primit acest mesaj pentru ca ati comandat urmatoarele produse:</p>
+    <p style="color: gray">Ati primit acest mesaj pentru ca ati comandat urmatoarele produse:</p>
     <table>
         <tr style="background-color: #dddddd">
             <th>Produs</th>
             <th>ID produs</th>
-            <th>Cantitate</th>
-            <th>Pret, unitate</th>
+            <th>Cant.-te</th>
+            <th>Pret, unit.</th>
             <th>Pret, total</th>
         </tr>
         {% for product in products %}
@@ -87,8 +87,8 @@
     >
         Adresa livrarii
     </h3>
-    <p>Inainte de livrare va vom contacta pentru confirmare</p>
-    <table style="width: 40%; background-color: #eeeeee">
+    <p style="color: gray">Inainte de livrare va vom contacta pentru confirmare</p>
+    <table style="background-color: #eeeeee">
         <tr>
             <td style="font-weight: bold">Tara</td>
             <td>{{ country }}</td>
@@ -118,7 +118,7 @@
             <td>{{ telephone }}</td>
         </tr>
     </table>
-    <p>Va multumit ca ati ales site-l nostru!</p>
-    <p>Echipa: PLAFAR.ORG, adresa email: plafarorg@gmail.com</p>
+    <p style="color: gray">Va multumit ca ati ales site-l nostru!</p>
+    <p style="color: gray">Echipa: PLAFAR.ORG, adresa email: plafarorg@gmail.com</p>
 </body>
 </html>
