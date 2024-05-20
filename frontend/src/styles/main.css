@@ -352,12 +352,21 @@ h2.categorii {
 @media only screen and (max-width: 1440px) {
     .rem-detail {
         padding-left: 8rem;
+        padding-right: 8rem;
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 992px) {
     .rem-detail {
-        padding-left: 0;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .rem-detail {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
@@ -755,5 +764,118 @@ td, th {
         width: 100%;
         margin: 0;
         font-size: 0.8rem;
+    }
+}
+
+/* ================ Order Style ================= */
+.order-container {
+    padding: 0 20rem 2rem 20rem;
+}
+
+@media only screen and (max-width: 1440px) {
+    .order-container {
+        padding: 0 10rem 2rem 10rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .order-container {
+        padding: 0 5rem 2rem 5rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .order-container {
+        padding: 0 2rem 2rem 2rem;
+    }
+}
+
+.order-text {
+    color: gray
+}
+
+@media only screen and (max-width: 992px) {
+    .order-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .order-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============ Article detail classes ================= */
+
+.btn-article-detail {
+    background-color: #94b237;
+    border: #94b237;
+    position: relative;
+    color:white; 
+}
+
+
+.article-detail-delimiter {
+    background-color: #94b237;
+    height: 2px;
+    margin-bottom: 2rem;
+    margin-right: 10rem;
+}
+
+@media only screen and (max-width: 1440px) {
+    .article-detail-delimiter {
+        margin-right: 5rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .article-detail-delimiter {
+        margin-right: 2rem;
+    }
+}
+
+/* ========= brands styles ============== */
+.brands-container {
+    padding: 0 10rem 0 10rem;
+}
+
+@media only screen and (max-width: 1440px) {
+    .brands-container {
+        padding: 0 5rem 0 5rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .brands-container {
+        padding: 0 2rem 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .brands-container {
+        padding: 0 0 0 0;
+    }
+}
+
+
+/* ============== Order Confirmation syles ============== */
+.order-confirmation-table-1 {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .order-confirmation-table-1 {
+        font-size: 0.7rem;
+    }
+}
+
+.order-confirmation-table-2 {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .order-confirmation-table-2 {
+        font-size: 0.9rem;
     }
 }

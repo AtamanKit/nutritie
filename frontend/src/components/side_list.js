@@ -57,7 +57,7 @@ function SideList(props) {
                 props.list === 'articlelasts'
                 ? <Button 
                     variant='success' 
-                    className='myBtnHero'
+                    className='btn-article-detail'
                     style={{marginBottom: '1rem'}}
                     href={'/breadcrumb/ARTICOLE/TOATE%20ARTICOLELE/'}
                     >
@@ -65,12 +65,7 @@ function SideList(props) {
                     </Button>
                 : []
             }
-            <div style={{
-                backgroundColor: '#94b237',
-                height: '2px',
-                marginBottom: '2rem',
-                marginRight: '3rem',
-            }}/>
+            <div className='article-detail-delimiter'/>
                 
         </React.Fragment>
     )

@@ -26,7 +26,7 @@ import PasswordReset from './components/password_reset';
 import PasswordSuccess from './components/password_success';
 import Order from './components/order';
 import { apiUrl } from './components/utils';
-// import OrderConfirmation from './components/order_confirmation';
+// import OrderConfirmationProba from './components/order_confirmation_proba';
 
 const pathname = elementPath();
 const api_nut_app_categories = apiUrl() + '/nut_app/categories/';
@@ -107,8 +107,8 @@ function App() {
             :   []
       }
       {/* {
-        pathname.type === 'CONFIRMARE' && pathname.category === 'VINZARI'
-        ? <OrderConfirmation />
+        pathname.type === 'proba' && pathname.category === 'proba'
+        ? <OrderConfirmationProba />
         : []
       } */}
       {

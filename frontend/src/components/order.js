@@ -180,7 +180,7 @@ export default function Order() {
         )
     } else {
         return(
-            <div>
+            <div className="order-container">
                 <div style={{
                     textAlign: 'center',
                     margin: '4% 0 0 0'
@@ -188,15 +188,12 @@ export default function Order() {
                     <h3>INTRODUCETI DATELE CU PRIVIRE LA ADRESA SI NUMELE DVS.</h3>
                 </div>
                 <Form
-                    style={{
-                        margin: '1% 20% 4% 20%'
-                    }}
                     noValidate
                     validated={validated}
                     onSubmit={handleSubmit}
                 >
-                    <Row className='mb-3'>
-                        <Form.Group as={Col}>
+                    <Row xs={1} md={2}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Prenume</Form.Label>
                             <Form.Control
                                 required
@@ -207,7 +204,7 @@ export default function Order() {
                                 Introduceti prenume
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Nume</Form.Label>
                             <Form.Control
                                 required
@@ -219,8 +216,8 @@ export default function Order() {
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Row className='mb-3'>
-                        <Form.Group as={Col}>
+                    <Row xs={1} md={2}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Numar telefon</Form.Label>
                             <Form.Control
                                 required
@@ -231,7 +228,7 @@ export default function Order() {
                                 Introduceti numar de telefon
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Email</Form.Label>
                             <Form.Control 
                                 // required
@@ -244,8 +241,8 @@ export default function Order() {
                             </Form.Control.Feedback> */}
                         </Form.Group>
                     </Row>
-                    <Row className='mb-3'>
-                        <Form.Group as={Col}>
+                    <Row xs={1} md={2}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Tara</Form.Label>
                             <Form.Select 
                                 required
@@ -259,7 +256,7 @@ export default function Order() {
                                 Introduceti tara
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Raion/Judet</Form.Label>
                             {
                                 country === 'Republica Moldova'
@@ -357,8 +354,8 @@ export default function Order() {
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Row className='mb-3'>
-                        <Form.Group as={Col}>
+                    <Row xs={1} md={2}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Oras (alta localitate)</Form.Label>
                             <Form.Control
                                 required
@@ -369,7 +366,7 @@ export default function Order() {
                                 Introduceti localitatea
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col}>
+                        <Form.Group className='mb-3' as={Col}>
                             <Form.Label>Adresa</Form.Label>
                             <Form.Control 
                                 placeholder='str., nr. bloc/nr. apartament'
@@ -385,7 +382,7 @@ export default function Order() {
                             label='Termeni si conditii'
                             onChange={e => setChecked(e.target.checked)}
                         />
-                        <p>
+                        <p className='order-text'>
                             In urma inregistrarii datelor dumneavaostra
                             va vom contacta
                             pentru a stabili modalitatea de plata si trimitere a produsului.

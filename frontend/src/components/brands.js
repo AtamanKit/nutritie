@@ -23,54 +23,30 @@ function Brands(props){
 
     return (
         <React.Fragment>
-            {/* <div ref={props.catRef}> */}
-            {/* <Card className='prod-cat' ref={props.brandRef}>
-                <Card.Body>
-                    <Card.Title>
-                        <h2 className='produsele'>BRAND</h2>
-                        <h2 className='categorii'>URI</h2>
-                        <div className='card-line'/>
-                    </Card.Title>
-                    <Card.Text>
-                        Producatori cu care colaboram
-                    </Card.Text>
-                </Card.Body>
-            </Card> */}
-            {/* </div> */}
-            {/* <CardGroup style={{
-                            paddingTop: '80px', 
-                            paddingBottom: '80px',
-                            paddingLeft: '2rem',
-                            }}> */}
-            
-                <Row xs={2} md={5}>
-                {
-                    brands.length !== 0
-                    ?   brands.map(brand =>
-                        <Col key={brand.id} >
-                        <Card style={{border: '0'}}>
-                        <a href={`/breadcrumb/PRODUSE/${brand.title}/`}>
-                            <Card.Img
-                                src={brand.image_desc} 
-                                style={{
-                                    // paddingTop: '1rem',
-                                    // paddingLeft:'1rem',
-                                    // paddingRight: '1rem'
-                                    padding: '4rem'
-                                }}
-                            />
-                        </a>
-                        </Card>
-                        </Col>
-                        
-                    )
-                    : []
-                }
-                </Row>            
-            
-
-
-            {/* </CardGroup> */}
+            <Row xs={2} md={3} lg={4} xl={5} className="brands-container">
+            {
+                brands.length !== 0
+                ?   brands.map(brand =>
+                    <Col key={brand.id} >
+                    <Card style={{border: '0'}}>
+                    <a href={`/breadcrumb/PRODUSE/${brand.title}/`}>
+                        <Card.Img
+                            src={brand.image_desc} 
+                            style={{
+                                // paddingTop: '1rem',
+                                // paddingLeft:'1rem',
+                                // paddingRight: '1rem'
+                                padding: '4rem'
+                            }}
+                        />
+                    </a>
+                    </Card>
+                    </Col>
+                    
+                )
+                : []
+            }
+            </Row>            
         </React.Fragment>
     )
 }
