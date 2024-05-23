@@ -137,7 +137,7 @@ USE_TZ = True
 STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/mediafiles/'
+MEDIA_URL = '/mediafiles/' if DEBUG else 'https://plafar.org/mediafiles/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
