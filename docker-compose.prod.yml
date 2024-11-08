@@ -38,11 +38,11 @@ services:
       - react_build:/home/frontend/
       - static_volume:/home/backend/static/
       - ./backend/media/:/home/backend/media/
-      - ./certbot/www/:/var/www/certbot/
-      - ./certbot/conf/:/etc/nginx/ssl/
+      # - ./certbot/www/:/var/www/certbot/
+      # - ./certbot/conf/:/etc/nginx/ssl/
     ports:
       - 80:80    # This mapping take place if we have a single application
-      - 443:443  # with the host
+      # - 443:443  # with the host
     # ports:
     #   - 82:80    # When using multiple applications with the same host
     #   - 442:443   # we map '80' and '443' ports to different ports of the host
