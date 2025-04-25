@@ -38,11 +38,11 @@ services:
       - react_build:/home/frontend/
       - static_volume:/home/backend/static/
       - ./backend/media/:/home/backend/media/
-      # - ./certbot/www/:/var/www/certbot/
-      # - ./certbot/conf/:/etc/nginx/ssl/
+      - ./certbot/www/:/var/www/certbot/
+      - ./certbot/conf/:/etc/nginx/ssl/
     ports:
       - 80:80    # This mapping take place if we have a single application
-      # - 443:443  # with the host
+      - 443:443  # with the host
     # ports:
     #   - 82:80    # When using multiple applications with the same host
     #   - 442:443   # we map '80' and '443' ports to different ports of the host
@@ -50,11 +50,12 @@ services:
       - web
       - api
 
-  # certbot:
-  #   image: certbot/certbot:latest
-  #   volumes:
-  #     - ./certbot/www/:/var/www/certbot/
-  #     - ./certbot/conf/:/etc/letsencrypt/
+      #  certbot:
+      #    image: certbot/certbot:latest
+      #    volumes:
+      #      - ./certbot/www/:/var/www/certbot/
+      #      - ./certbot/conf/:/etc/letsencrypt/
+      #    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 24h & wait $${!}; certbot renew --webroot -w /var/www/certbot/ --quiet; done'"
 
 volumes:
   postgres_data:
